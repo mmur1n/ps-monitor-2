@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10141d">
+<title>PS5 Stock Monitor · Sony DE</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1019;--card:#171f2c;--card2:#1c293b;--text:#eaf0fc;--muted:#98a9c1;--line:#304159;--blue:#90baff;--green:#61e2b4;--red:#ff9c9c;--gold:#f1ca84}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 30% -10%,#152e54 0,transparent 45%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}a{color:#a9cbff;text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:1160px;margin:auto;padding:34px 18px 75px}.top,.stats,.grid,.bar{display:flex;gap:14px}.top{align-items:center;justify-content:space-between;flex-wrap:wrap}.eyebrow{font-size:12px;letter-spacing:.18em;color:var(--blue);font-weight:750;text-transform:uppercase}
+h1{font-size:clamp(32px,6vw,54px);letter-spacing:-.05em;margin:12px 0 4px}h2{font-size:20px;margin:0}.desc{max-width:740px;color:var(--muted);margin:0 0 28px}
+button,select,.linkbtn{font:inherit;color:var(--text);background:#203b61;border:1px solid #416aa1;border-radius:11px;padding:9px 15px;cursor:pointer}.linkbtn{display:inline-block}.linkbtn:hover{background:#2b4b72}.stats{display:grid;grid-template-columns:repeat(3,1fr);margin:23px 0;gap:12px}.stat,.item,.history-section{background:var(--card);border:1px solid var(--line);border-radius:16px}.stat{padding:18px}.stat span{color:var(--muted);display:block;font-size:12px}.stat strong{display:block;margin:5px 0;font-size:25px;letter-spacing:-.025em}.stat small{display:block;color:var(--muted);font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:15px 0 29px}.item{padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}.item h3{font-size:19px;line-height:1.35;margin:0}.item p{font-size:13px;color:var(--muted);min-height:45px;margin:0}.item a{margin-top:auto;font-size:13px;font-weight:700}
+.pill{display:inline-flex;align-self:flex-start;padding:4px 10px;border:1px solid #53627a;background:#243147;border-radius:999px;color:#c7d6e9;font-size:12px;font-weight:700}.pill.IN_STOCK{border-color:#24755a;background:#124b3b;color:var(--green)}.pill.OUT_OF_STOCK{border-color:#86434a;background:#49262b;color:var(--red)}.pill.UNKNOWN,.pill.ERROR{border-color:#7c663c;background:#3d3122;color:var(--gold)}
+.muted{color:var(--muted)}.mini{font-size:12px}.history-section{padding:19px}.bar{align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:15px}select{font-size:13px;background:var(--card2);border-color:var(--line)}
+.entry{margin-top:9px;background:var(--card2);border:1px solid var(--line);border-radius:10px;overflow:hidden}.entry summary{display:flex;align-items:center;gap:12px;flex-wrap:wrap;cursor:pointer;padding:12px 15px;list-style:none}.entry summary::-webkit-details-marker{display:none}.entry summary time{margin-left:auto;color:var(--muted);font-size:12px}.details{border-top:1px solid var(--line);padding:15px;display:grid;gap:15px}
+.kv{display:grid;grid-template-columns:170px 1fr;gap:7px;font-size:12px;overflow-wrap:anywhere}.kv dt{color:var(--muted)}.kv dd{margin:0}.evidence{border-left:3px solid #537bab;padding-left:12px;margin:13px 0}.evidence b{display:block;font-size:13px}.evidence label{display:block;font-size:12px;color:var(--muted);margin-top:8px}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:200px;overflow:auto;font-size:12px;padding:12px;background:#0b1421;border-radius:8px;color:#d3e3f5}
+footer{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}.empty{padding:25px;color:var(--muted)}.warning{color:var(--gold)}
+@media(max-width:850px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats>.stat:last-child{grid-column:1/-1}.item p{min-height:unset}}
+@media(max-width:500px){.stats{grid-template-columns:1fr}.stats>.stat:last-child{grid-column:auto}.kv{grid-template-columns:1fr}h1{letter-spacing:-.03em}}
+</style>
+</head>
+<body><main class="container">
+<header class="top"><div class="eyebrow">Sony Deutschland · Independent monitor</div><div>
+<a class="linkbtn" href="https://github.com/mmur1n/ps-monitor-2/actions" target="_blank" rel="noopener">GitHub Actions ↗</a>
+<button type="button" id="refresh">↻ Обновить</button></div></header>
+<h1>PS5 Stock Monitor</h1>
+<p class="desc">Проверяем три комплектации PS5 у Sony. Telegram сообщает только о наличии версий <b>с дисководом</b>. Статус основан на полученном HTML; это не гарантия доступности к заказу.</p>
+<div class="stats">
+<section class="stat"><span>Последняя проверка</span><strong id="last">—</strong><small id="fresh">Ожидаем данные</small></section>
+<section class="stat"><span>Следующая проверка (план)</span><strong id="countdown">—</strong><small>GitHub Actions иногда запускается позже</small></section>
+<section class="stat"><span>Проверенных комплектаций</span><strong id="count">0 / 3</strong><small>Плановый интервал: 5 минут</small></section>
+</div>
+<h2>Наличие</h2><section class="grid" id="products"></section>
+<section class="history-section"><div class="bar"><div><h2>История и причины решений</h2><span class="mini muted">Открой запись, чтобы посмотреть HTTP-ответ, найденную фразу и HTML-фрагмент.</span></div>
+<select id="filter" aria-label="Модель"><option value="all">Все модели</option><option value="disc-one">Disc + 1 DualSense</option><option value="disc-two">Disc + 2 DualSense</option><option value="digital-two">Digital + 2 DualSense</option></select></div>
+<div id="history"><div class="empty">История появится после первого запуска проверки.</div></div></section>
+<footer>Публичная панель проекта, не связанного с Sony. Ошибка или неизвестный статус не означают, что товар отсутствует. Полные последние результаты: <a href="./data.json">data.json</a>. Сохранённые HTML-фрагменты показываются как текст, без выполнения кода страницы. Время отображается по часовому поясу вашего устройства.</footer>
+</main>
+<script>
+"use strict";
+var state=null;
+function el(tag,cls,value){var node=document.createElement(tag);if(cls)node.className=cls;if(value!==undefined)node.textContent=String(value);return node}
+function date(v){if(!v)return "—";var d=new Date(v);return isNaN(d.getTime())?"—":d.toLocaleString("ru-RU",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit"})}
+function badge(v){var labels={IN_STOCK:"В наличии",OUT_OF_STOCK:"Нет в наличии",UNKNOWN:"Неизвестно",ERROR:"Ошибка"};return el("span","pill "+(v||""),labels[v]||"Нет данных")}
+function productName(id){var p=(state.products||[]).find(function(a){return a.id===id});return p?p.name:id}
+function renderProducts(){
+var target=document.getElementById("products");target.replaceChildren();
+(state.products||[]).forEach(function(p){
+var info=(state.latest||{})[p.id]||{},article=el("article","item");
+article.append(el("span","mini muted",p.notify?"🔔 Telegram: включён":"🔕 Только мониторинг"),el("h3","",p.name),badge(info.status));
+article.append(el("p","",info.reason||"Ещё не проверено"),el("div","mini muted","Последняя проверка: "+date(info.checked_at)));
+var link=el("a","","Открыть у Sony ↗");link.href=p.url;link.rel="noopener noreferrer";link.target="_blank";article.append(link);target.append(article);
+});
+}
+function addPair(dl,k,v){dl.append(el("dt","",k),el("dd","",v===null||v===undefined?"—":v))}
+function renderHistory(){
+var dest=document.getElementById("history"),filter=document.getElementById("filter").value;
+dest.replaceChildren();var entries=(state.history||[]).filter(function(x){return filter==="all"||x.product_id===filter}).slice(-40).reverse();
+if(!entries.length){dest.append(el("div","empty","Пока нет истории для выбранной модели."));return}
+entries.forEach(function(entry){
+var details=el("details","entry"),summary=el("summary");summary.append(badge(entry.status),el("b","",productName(entry.product_id)),el("time","",date(entry.checked_at)));details.append(summary);
+var content=el("div","details"),meta=el("dl","kv");
+addPair(meta,"Результат",entry.reason);addPair(meta,"HTTP",entry.http_status);addPair(meta,"Заголовок H1",entry.title_verified?"Совпадает":"Нет подтверждения");
+addPair(meta,"Параметры комплектации",entry.identity_verified?"Подтверждены":"Нет подтверждения");
+addPair(meta,"Конечный URL",entry.final_url);addPair(meta,"Размер HTML",entry.content_bytes===null?"—":entry.content_bytes+" байт");addPair(meta,"SHA-256",entry.sha256);
+content.append(meta);
+if((entry.signals||[]).length===0){content.append(el("div","mini muted","Подтверждающих HTML-сигналов не обнаружено."))}
+(entry.signals||[]).forEach(function(signal){
+var box=el("section","evidence");box.append(el("b","",signal.kind==="absent"?"Отсутствует: "+signal.term:"Признак покупки: "+signal.term));
+box.append(el("label","","Фрагмент видимого текста"),el("pre","",signal.visible||""),el("label","","Фрагмент полученного HTML"),el("pre","",signal.html||""));content.append(box);
+});details.append(content);dest.append(details);
+});
+}
+function render(){
+if(!state)return;
+renderProducts();renderHistory();
+document.getElementById("last").textContent=date(state.last_run_at);
+document.getElementById("count").textContent=Object.keys(state.latest||{}).length+" / "+(state.products||[]).length;
+var age=(Date.now()-Date.parse(state.last_run_at))/60000;
+document.getElementById("fresh").textContent=isFinite(age)?(age>18?"⚠ Данные устарели: "+Math.floor(age)+" мин":"Актуальные данные, проверка по расписанию"):"Ожидаем первую проверку";
+}
+function updateClock(){
+var now=new Date(),next=new Date(now.getTime()+1000);next.setUTCSeconds(0,0);
+while(next.getTime()<=now.getTime()||((next.getUTCMinutes()-2+60)%5)!==0){next.setUTCMinutes(next.getUTCMinutes()+1)}
+var seconds=Math.max(0,Math.ceil((next.getTime()-now.getTime())/1000));
+document.getElementById("countdown").textContent=String(Math.floor(seconds/60)).padStart(2,"0")+":"+String(seconds%60).padStart(2,"0");
+}
+async function load(){
+var button=document.getElementById("refresh");button.disabled=true;
+try{var r=await fetch("./data.json?ts="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);state=await r.json();render()}
+catch(e){document.getElementById("fresh").textContent="Ошибка получения данных: "+e.message}
+finally{button.disabled=false}
+}
+document.getElementById("refresh").addEventListener("click",load);
+document.getElementById("filter").addEventListener("change",renderHistory);
+updateClock();load();setInterval(updateClock,1000);setInterval(load,60000);
+</script></body></html>
