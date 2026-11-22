@@ -28,56 +28,43 @@
   ],
   "latest": {
     "disc-one": {
-      "status": "OUT_OF_STOCK",
-      "reason": "Sony: nicht zum kauf erhältlich",
-      "title_verified": true,
-      "identity_verified": true,
-      "signals": [
-        {
-          "kind": "absent",
-          "term": "nicht zum kauf erhältlich",
-          "visible": "playstation5 konsole - 1 tb nicht zum kauf erhältlich bezahle in bis zu 12 monatlichen raten mit klarna mehr erfahren mit dem kauf fortfahren w",
-          "html": "EHB2OYE\\\"})\":{\"__ref\":\"Product:PSD001-PSDE01929_59-PS5CONSOLEHB2OYE\"}}},\"translations\":{\"msgid_not_available_purchase\":\"Nicht zum Kauf erhältlich\"}}</script><div data-mfe-name=\"ctaWithPrice\" class=\"psw-root\" data-initial=\"env:c4a99d10-e623-11f1-8af1-59083a6920b5\"><div data-qa=\"mfeCtaMain\" aria-hidden=\"true\" class=\"psw-c-bg-"
-        },
-        {
-          "kind": "absent",
-          "term": "derzeit nicht vorrätig",
-          "visible": "like never before die ps5-konsole eröffnet völlig neue, unerwartete gaming-möglichkeiten. derzeit nicht vorrätig. schau bald wieder vorbei, wir sorgen für nachschub. suchst du jetzt gerade nach einer ps",
-          "html": "SOLEHB2OYE\",\"sku\":\"PSD001-PSDE01929_59-PS5CONSOLEHB2OYE-E000LG5OF\",\"name\":\"PlayStation®5 Konsole - 1 TB\",\"description\":\"Derzeit nicht vorrätig. Schau bald wieder vorbei, wir sorgen für Nachschub. Suchst du jetzt gerade nach einer PS5-Konsole? Entdecke unsere anderen Konsolen, die noch heute versandfertig sind. Ab Januar "
-        }
-      ],
-      "http_status": 200,
-      "final_url": "https://www.playstation.com/de-de/ps5/1-tb-disc/",
-      "content_bytes": 1181834,
-      "sha256": "52636848efeaeec3276f91f1c84a0cea0269f703fb483396e12931671266fa87",
-      "product_id": "disc-one",
-      "checked_at": "2026-11-22T03:21:10+00:00"
-    },
-    "disc-two": {
-      "status": "UNKNOWN",
-      "reason": "Нет подтверждённого сигнала наличия",
-      "title_verified": true,
-      "identity_verified": true,
+      "status": "ERROR",
+      "reason": "HTTPError: HTTP Error 403: Forbidden",
       "signals": [],
-      "http_status": 200,
-      "final_url": "https://www.playstation.com/de-de/ps5/1-tb-disc/product/two-dualsense-wireless-controllers-bundle/",
-      "content_bytes": 1180574,
-      "sha256": "d92e211579353461ecf3525d28efef30865a0fc1fa0537e8c1232b31ed95425f",
-      "product_id": "disc-two",
-      "checked_at": "2026-11-22T03:21:18+00:00"
-    },
-    "digital-two": {
-      "status": "UNKNOWN",
-      "reason": "Точный H1 выбранной комплектации не найден",
       "title_verified": false,
       "identity_verified": false,
+      "http_status": 403,
+      "final_url": null,
+      "content_bytes": null,
+      "sha256": null,
+      "product_id": "disc-one",
+      "checked_at": "2026-11-22T18:42:02+00:00"
+    },
+    "disc-two": {
+      "status": "ERROR",
+      "reason": "HTTPError: HTTP Error 403: Forbidden",
       "signals": [],
-      "http_status": 200,
-      "final_url": "https://www.playstation.com/de-de/ps5/digital-edition-825-gb/",
-      "content_bytes": 1254211,
-      "sha256": "50ab92743dd11a9372943916e5c6dfc49056c19ca9e51f50644e99bacb59ad7c",
+      "title_verified": false,
+      "identity_verified": false,
+      "http_status": 403,
+      "final_url": null,
+      "content_bytes": null,
+      "sha256": null,
+      "product_id": "disc-two",
+      "checked_at": "2026-11-22T18:42:08+00:00"
+    },
+    "digital-two": {
+      "status": "ERROR",
+      "reason": "HTTPError: HTTP Error 403: Forbidden",
+      "signals": [],
+      "title_verified": false,
+      "identity_verified": false,
+      "http_status": 403,
+      "final_url": null,
+      "content_bytes": null,
+      "sha256": null,
       "product_id": "digital-two",
-      "checked_at": "2026-11-22T03:21:24+00:00"
+      "checked_at": "2026-11-22T18:42:13+00:00"
     }
   },
   "history": [
@@ -444,6 +431,45 @@
       "sha256": "50ab92743dd11a9372943916e5c6dfc49056c19ca9e51f50644e99bacb59ad7c",
       "product_id": "digital-two",
       "checked_at": "2026-11-22T03:21:24+00:00"
+    },
+    {
+      "status": "ERROR",
+      "reason": "HTTPError: HTTP Error 403: Forbidden",
+      "signals": [],
+      "title_verified": false,
+      "identity_verified": false,
+      "http_status": 403,
+      "final_url": null,
+      "content_bytes": null,
+      "sha256": null,
+      "product_id": "disc-one",
+      "checked_at": "2026-11-22T18:42:02+00:00"
+    },
+    {
+      "status": "ERROR",
+      "reason": "HTTPError: HTTP Error 403: Forbidden",
+      "signals": [],
+      "title_verified": false,
+      "identity_verified": false,
+      "http_status": 403,
+      "final_url": null,
+      "content_bytes": null,
+      "sha256": null,
+      "product_id": "disc-two",
+      "checked_at": "2026-11-22T18:42:08+00:00"
+    },
+    {
+      "status": "ERROR",
+      "reason": "HTTPError: HTTP Error 403: Forbidden",
+      "signals": [],
+      "title_verified": false,
+      "identity_verified": false,
+      "http_status": 403,
+      "final_url": null,
+      "content_bytes": null,
+      "sha256": null,
+      "product_id": "digital-two",
+      "checked_at": "2026-11-22T18:42:13+00:00"
     }
   ],
   "notifications": {
@@ -457,5 +483,5 @@
       "sent": false
     }
   },
-  "last_run_at": "2026-11-22T03:21:27+00:00"
+  "last_run_at": "2026-11-22T18:42:14+00:00"
 }
