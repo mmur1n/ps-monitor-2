@@ -37,7 +37,7 @@
           "kind": "absent",
           "term": "nicht zum kauf erhältlich",
           "visible": "playstation5 konsole - 1 tb nicht zum kauf erhältlich bezahle in bis zu 24 monatlichen raten mit klarna mehr erfahren mit dem kauf fortfahren w",
-          "html": "EHB2OYE\\\"})\":{\"__ref\":\"Product:PSD001-PSDE01929_59-PS5CONSOLEHB2OYE\"}}},\"translations\":{\"msgid_not_available_purchase\":\"Nicht zum Kauf erhältlich\"}}</script><div data-mfe-name=\"ctaWithPrice\" class=\"psw-root\" data-initial=\"env:14252770-e92f-11f1-acdd-0fa37b3e11f6\"><div data-qa=\"mfeCtaMain\" aria-hidden=\"true\" class=\"psw-c-bg-"
+          "html": "EHB2OYE\\\"})\":{\"__ref\":\"Product:PSD001-PSDE01929_59-PS5CONSOLEHB2OYE\"}}},\"translations\":{\"msgid_not_available_purchase\":\"Nicht zum Kauf erhältlich\"}}</script><div data-mfe-name=\"ctaWithPrice\" class=\"psw-root\" data-initial=\"env:61744010-e975-11f1-804d-8729754b7fe8\"><div data-qa=\"mfeCtaMain\" aria-hidden=\"true\" class=\"psw-c-bg-"
         },
         {
           "kind": "absent",
@@ -48,10 +48,10 @@
       ],
       "http_status": 200,
       "final_url": "https://www.playstation.com/de-de/ps5/1-tb-disc/",
-      "content_bytes": 1181830,
-      "sha256": "f6c4a4e91767890b562bb367cdbdb58e4737a881c64f790ec10f314d3282505b",
+      "content_bytes": 1181834,
+      "sha256": "601aeff565ad287a12bceb6ad49ae4370386e4c0509ee04dbd89319f9fbff189",
       "product_id": "disc-one",
-      "checked_at": "2026-11-26T00:24:56+00:00"
+      "checked_at": "2026-11-26T08:47:25+00:00"
     },
     "disc-two": {
       "status": "UNKNOWN",
@@ -62,9 +62,9 @@
       "http_status": 200,
       "final_url": "https://www.playstation.com/de-de/ps5/1-tb-disc/product/two-dualsense-wireless-controllers-bundle/",
       "content_bytes": 1180574,
-      "sha256": "10d2b6252b1685bb660b9d94f5debaf5b480ee064ed500b32a61f39b1a25e931",
+      "sha256": "77c0aac1fca0839113c4d43f601bedcaef33b208e54cf67811ac870d71f7741f",
       "product_id": "disc-two",
-      "checked_at": "2026-11-26T00:25:02+00:00"
+      "checked_at": "2026-11-26T08:47:31+00:00"
     },
     "digital-two": {
       "status": "UNKNOWN",
@@ -74,10 +74,10 @@
       "signals": [],
       "http_status": 200,
       "final_url": "https://www.playstation.com/de-de/ps5/digital-edition-825-gb/",
-      "content_bytes": 1239634,
-      "sha256": "6b225b324f752372b162252b1899ff1f7bb2c05e9e871a0c52535edc72d3c5bf",
+      "content_bytes": 1239630,
+      "sha256": "b0d8835a610c78019e7ca0c63f7eb40af820b73140850c947aeda650e818ae9e",
       "product_id": "digital-two",
-      "checked_at": "2026-11-26T00:25:08+00:00"
+      "checked_at": "2026-11-26T08:47:36+00:00"
     }
   },
   "history": [
@@ -847,6 +847,58 @@
       "sha256": "6b225b324f752372b162252b1899ff1f7bb2c05e9e871a0c52535edc72d3c5bf",
       "product_id": "digital-two",
       "checked_at": "2026-11-26T00:25:08+00:00"
+    },
+    {
+      "status": "OUT_OF_STOCK",
+      "reason": "Sony: nicht zum kauf erhältlich",
+      "title_verified": true,
+      "identity_verified": true,
+      "signals": [
+        {
+          "kind": "absent",
+          "term": "nicht zum kauf erhältlich",
+          "visible": "playstation5 konsole - 1 tb nicht zum kauf erhältlich bezahle in bis zu 24 monatlichen raten mit klarna mehr erfahren mit dem kauf fortfahren w",
+          "html": "EHB2OYE\\\"})\":{\"__ref\":\"Product:PSD001-PSDE01929_59-PS5CONSOLEHB2OYE\"}}},\"translations\":{\"msgid_not_available_purchase\":\"Nicht zum Kauf erhältlich\"}}</script><div data-mfe-name=\"ctaWithPrice\" class=\"psw-root\" data-initial=\"env:61744010-e975-11f1-804d-8729754b7fe8\"><div data-qa=\"mfeCtaMain\" aria-hidden=\"true\" class=\"psw-c-bg-"
+        },
+        {
+          "kind": "absent",
+          "term": "derzeit nicht vorrätig",
+          "visible": "like never before die ps5-konsole eröffnet völlig neue, unerwartete gaming-möglichkeiten. derzeit nicht vorrätig. schau bald wieder vorbei, wir sorgen für nachschub. suchst du jetzt gerade nach einer ps",
+          "html": "SOLEHB2OYE\",\"sku\":\"PSD001-PSDE01929_59-PS5CONSOLEHB2OYE-E000LG5OF\",\"name\":\"PlayStation®5 Konsole - 1 TB\",\"description\":\"Derzeit nicht vorrätig. Schau bald wieder vorbei, wir sorgen für Nachschub. Suchst du jetzt gerade nach einer PS5-Konsole? Entdecke unsere anderen Konsolen, die noch heute versandfertig sind. Ab Januar "
+        }
+      ],
+      "http_status": 200,
+      "final_url": "https://www.playstation.com/de-de/ps5/1-tb-disc/",
+      "content_bytes": 1181834,
+      "sha256": "601aeff565ad287a12bceb6ad49ae4370386e4c0509ee04dbd89319f9fbff189",
+      "product_id": "disc-one",
+      "checked_at": "2026-11-26T08:47:25+00:00"
+    },
+    {
+      "status": "UNKNOWN",
+      "reason": "Нет подтверждённого сигнала наличия",
+      "title_verified": true,
+      "identity_verified": true,
+      "signals": [],
+      "http_status": 200,
+      "final_url": "https://www.playstation.com/de-de/ps5/1-tb-disc/product/two-dualsense-wireless-controllers-bundle/",
+      "content_bytes": 1180574,
+      "sha256": "77c0aac1fca0839113c4d43f601bedcaef33b208e54cf67811ac870d71f7741f",
+      "product_id": "disc-two",
+      "checked_at": "2026-11-26T08:47:31+00:00"
+    },
+    {
+      "status": "UNKNOWN",
+      "reason": "Точный H1 выбранной комплектации не найден",
+      "title_verified": false,
+      "identity_verified": false,
+      "signals": [],
+      "http_status": 200,
+      "final_url": "https://www.playstation.com/de-de/ps5/digital-edition-825-gb/",
+      "content_bytes": 1239630,
+      "sha256": "b0d8835a610c78019e7ca0c63f7eb40af820b73140850c947aeda650e818ae9e",
+      "product_id": "digital-two",
+      "checked_at": "2026-11-26T08:47:36+00:00"
     }
   ],
   "notifications": {
@@ -860,5 +912,5 @@
       "sent": false
     }
   },
-  "last_run_at": "2026-11-26T00:25:12+00:00"
+  "last_run_at": "2026-11-26T08:47:38+00:00"
 }
